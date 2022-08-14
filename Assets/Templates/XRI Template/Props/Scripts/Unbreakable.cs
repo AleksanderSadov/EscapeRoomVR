@@ -13,6 +13,10 @@ namespace Unity.XRContent.Interaction
         [Serializable] public class RestoreEvent : UnityEvent<GameObject> { }
 
         [SerializeField]
+        [Tooltip("Is restorable")]
+        bool m_isRestorable = true;
+
+        [SerializeField]
         [Tooltip("How long to wait before rewinding the object's motion.")]
         float m_RestTime = 1.0f;
 
@@ -60,7 +64,7 @@ namespace Unity.XRContent.Interaction
 
         void Update()
         {
-            if (m_Restored)
+            if (!m_isRestorable || m_Restored)
                 return;
 
             // Phase 1 - wait to rewind
