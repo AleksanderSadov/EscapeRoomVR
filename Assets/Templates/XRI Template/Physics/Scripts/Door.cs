@@ -73,6 +73,7 @@ namespace Unity.XRContent.Interaction
             m_ClosedDoorLimits.max = 0.0f;
             m_DoorJoint.limits = m_ClosedDoorLimits;
             m_KeyKnob.SetActive(false);
+            m_Locked = true;
             m_Closed = true;
         }
 
