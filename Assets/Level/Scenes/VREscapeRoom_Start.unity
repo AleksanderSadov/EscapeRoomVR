@@ -6809,6 +6809,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestLighter
       objectReference: {fileID: 0}
+    - target: {fileID: 1362929430410378996, guid: e5f583eb414b93849a117c40250890ca,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2804422015809968620, guid: e5f583eb414b93849a117c40250890ca,
         type: 3}
       propertyPath: m_Name
