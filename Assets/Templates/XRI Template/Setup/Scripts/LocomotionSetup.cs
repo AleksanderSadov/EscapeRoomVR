@@ -112,7 +112,7 @@ namespace Unity.XRContent.Interaction
 
             m_TurnSpeedKnob.Value = m_Manager.SmoothTurnProvider.turnSpeed;
             m_TurnAroundToggle.ToggleValue = m_Manager.SnapTurnProvider.enableTurnAround;
-            m_SnapTurnKnob.Value = m_Manager.SnapTurnProvider.turnAmount;
+            m_SnapTurnKnob.Value = m_Manager.SnapTurnProvider.turnAmount / m_SnapTurnKnob.MaxAngle;
 
             m_MoveSpeedLabel.text = $"{m_Manager.SmoothMoveProvider.moveSpeed}{k_SpeedLabel}";
             m_TurnSpeedLabel.text = $"{m_Manager.SmoothTurnProvider.turnSpeed}{k_DegreeLabel}";
