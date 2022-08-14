@@ -4881,7 +4881,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.6603774, g: 0.49160698, b: 0.2803489, a: 1}
   m_Intensity: 1
-  m_Range: 2
+  m_Range: 8
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -4940,7 +4940,7 @@ Animator:
   m_GameObject: {fileID: 9155329515578560010}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ff1a19bea427fb24caf0dfe3246c06b2, type: 2}
+  m_Controller: {fileID: 9100000, guid: aff4b423ce2d5b648a84d5e0f339c053, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
