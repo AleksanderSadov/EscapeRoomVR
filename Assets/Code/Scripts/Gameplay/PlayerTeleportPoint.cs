@@ -22,6 +22,8 @@ namespace EscapeRoom.Gameplay
                 transform.position.y + playerRigConfig.defaultPlayerRigHeightOffset,
                 transform.position.z
             );
+
+            playerRig.transform.rotation = transform.rotation;
         }
     }
 }
