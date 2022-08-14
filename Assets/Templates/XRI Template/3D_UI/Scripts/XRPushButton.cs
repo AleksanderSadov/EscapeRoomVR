@@ -113,14 +113,6 @@ namespace Unity.XRContent.Interaction
             }
         }
 
-        public override bool IsHoverableBy(IXRHoverInteractor interactor)
-        {
-            if (interactor is XRRayInteractor)
-                return false;
-
-            return base.IsHoverableBy(interactor);
-        }
-
         void Start()
         {
             if (m_Button != null)
@@ -136,6 +128,7 @@ namespace Unity.XRContent.Interaction
             else
                 SetButtonHeight(0.0f);
 
+            selectEntered.AddListener(ToggleButton);
             hoverEntered.AddListener(StartHover);
             hoverExited.AddListener(EndHover);
         }
@@ -249,6 +242,24 @@ namespace Unity.XRContent.Interaction
                 m_OnValueChange.Invoke(m_Value);
 
             SetButtonHeight(minimumHeight);
+        }
+
+        void ToggleButton(SelectEnterEventArgs args)
+        {
+            m_Toggled = !m_Toggled;
+
+            if (m_Toggled)
+            {
+                m_OnPress.Invoke();
+                m_OnValueChange.Invoke(1);
+                SetButtonHeight(-m_PressDistance);
+            }
+            else
+            {
+                m_OnRelease.Invoke();
+                m_OnValueChange.Invoke(0f);
+                SetButtonHeight(0f);
+            }
         }
 
         void SetButtonHeight(float height)
