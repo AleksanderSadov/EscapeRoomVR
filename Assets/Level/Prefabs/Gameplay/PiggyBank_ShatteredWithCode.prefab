@@ -3461,7 +3461,7 @@ GameObject:
   - component: {fileID: 6017320985375623529}
   - component: {fileID: 534273608}
   m_Layer: 0
-  m_Name: PiggyBank_ShatteredAlways
+  m_Name: PiggyBank_ShatteredWithCode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

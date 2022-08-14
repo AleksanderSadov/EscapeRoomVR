@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 66535851648651014}
   - component: {fileID: 66535851648651009}
   m_Layer: 0
-  m_Name: PiggyBank_Breakable
+  m_Name: PiggyBank_BreakableWithCode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
