@@ -9,7 +9,7 @@ To launch the game run ['VREscapeRoom_Start' scene](./Assets/Level/Scenes/VREsca
 
 # Tested Devices
 
-Mainly tested on 'Microsoft Mixed Reality' with 'Lenovo Explorer' headset
+Mainly tested on 'Windows Mixed Reality' with 'Lenovo Explorer' headset
 
 Configured with 'OpenXR' and should work with compatible devices
 
