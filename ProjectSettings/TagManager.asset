@@ -9,6 +9,7 @@ TagManager:
   - Projectile
   - Flame
   - MiniWorldCamera
+  - FinalCode
   layers:
   - Default
   - TransparentFX
