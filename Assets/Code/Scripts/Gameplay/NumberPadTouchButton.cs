@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -8,6 +9,7 @@ namespace EscapeRoom.Gameplay
         [Header("Visuals")]
         public Material normalMaterial;
         public Material touchedMaterial;
+        public float touchedFromDistanceTime = 1f;
 
         [Header("Button Data")]
         public int buttonNumber;
@@ -21,14 +23,14 @@ namespace EscapeRoom.Gameplay
             rendererToChange = GetComponent<MeshRenderer>();
         }
 
-        public override bool IsHoverableBy(IXRHoverInteractor interactor)
-        {
-            return base.IsHoverableBy(interactor) && (interactor is XRDirectInteractor);
-        }
-
         protected override void OnHoverEntered(HoverEnterEventArgs args)
         {
             base.OnHoverEntered(args);
+
+            if (args.interactorObject is XRRayInteractor)
+            {
+                return;
+            }
 
             if (numberOfInteractorTouching == 0)
             {
@@ -43,12 +45,33 @@ namespace EscapeRoom.Gameplay
         {
             base.OnHoverExited(args);
 
+            if (args.interactorObject is XRRayInteractor)
+            {
+                return;
+            }
+
             numberOfInteractorTouching -= 1;
 
             if (numberOfInteractorTouching == 0)
             {
                 rendererToChange.material = normalMaterial;
             }
+        }
+
+        protected override void OnSelectEntered(SelectEnterEventArgs args)
+        {
+            base.OnSelectEntered(args);
+
+            StartCoroutine(PressButtonFromDistance());
+        }
+
+        private IEnumerator PressButtonFromDistance()
+        {
+            linkedNumberpad.ButtonPressed(buttonNumber);
+
+            rendererToChange.material = touchedMaterial;
+            yield return new WaitForSeconds(touchedFromDistanceTime);
+            rendererToChange.material = normalMaterial;
         }
     }
 }
